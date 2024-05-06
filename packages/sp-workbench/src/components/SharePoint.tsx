@@ -46,7 +46,12 @@ const queryClient = new QueryClient({
 });
 
 type Props = {
-  children: ReactNode | ((workbench: any) => ReactNode);
+  children:
+    | ReactNode
+    | ((workbench: {
+        location: string;
+        displayMode: DisplayMode;
+      }) => ReactNode);
 };
 
 export function SharePoint(props: Props) {

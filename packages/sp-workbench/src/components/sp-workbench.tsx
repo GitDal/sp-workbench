@@ -1,9 +1,6 @@
-import { ReactNode } from "react";
 import { SharePoint } from "./SharePoint";
 
-type Props = {
-  children: ReactNode | ((workbench: any) => ReactNode);
-};
+type Props = React.ComponentProps<typeof SharePoint>;
 
 export function SPWorkbench(props: Props) {
   return <SharePoint {...props} />;
