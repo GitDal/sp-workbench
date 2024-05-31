@@ -16,6 +16,7 @@ import {
 } from "@fluentui/react-components";
 import { AddRegular } from "@fluentui/react-icons";
 import { useWorkbenchQuery } from "../../hooks/useWorkbenchQuery";
+import { ListTable } from "./ListTable";
 
 export function ViewLists() {
   const { sp } = useWorkbench();
@@ -52,16 +53,8 @@ export function ViewLists() {
           <Tab value="contents">Contents</Tab>
           <Tab value="subsites">Subsites</Tab>
         </TabList>
-        <Divider />
-        {selectedValue === "contents"
-          ? lists?.map((list, id) => {
-              return (
-                <div key={`list-${id}`}>
-                  {list.Title}, {list.ItemCount}
-                </div>
-              );
-            })
-          : null}
+        <Divider className="pt-2" />
+        {selectedValue === "contents" ? <ListTable lists={lists} /> : null}
 
         {selectedValue === "subsites"
           ? "Your site doesn't have any subsites"
