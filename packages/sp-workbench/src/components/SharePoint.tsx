@@ -118,6 +118,14 @@ export function SharePoint(props: Props) {
                     <ViewLists />
                   </Route>
 
+                  <Route path="/_layouts/settings.aspx">
+                    Site Settings
+                  </Route>
+
+                  <Route path="/_layouts/AdminRecycleBin.aspx">
+                    Recycle Bin
+                  </Route>
+
                   <Route>
                     <ErrorBoundary resetKeys={["page"]}>
                       <SitePage editMode={editMode} setEditMode={setEditMode}>
